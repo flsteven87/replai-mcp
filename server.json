@@ -1,0 +1,23 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "tw.replai/replai",
+  "title": "Replai",
+  "description": "Set up, test and publish an AI customer support Agent for your SaaS product.",
+  "version": "1.1.1",
+  "websiteUrl": "https://replai.tw/en/guide/connect-ai-agents",
+  "icons": [
+    {
+      "src": "https://replai.tw/app-icon-192.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "192x192"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.replai.tw/mcp"
+    }
+  ]
+}

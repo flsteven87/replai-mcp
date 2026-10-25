@@ -1,0 +1,22 @@
+{
+  "name": "replai",
+  "version": "1.1.1",
+  "description": "Set up, test and publish an AI customer support Agent for your SaaS product.",
+  "author": {
+    "name": "AIthentic LLC",
+    "email": "hello@replai.tw",
+    "url": "https://replai.tw"
+  },
+  "homepage": "https://replai.tw/en/guide/connect-ai-agents",
+  "repository": "https://github.com/flsteven87/replai-mcp",
+  "license": "MIT",
+  "keywords": [
+    "customer-support",
+    "saas",
+    "knowledge",
+    "inbox"
+  ],
+  "mcpServers": "./.mcp.json",
+  "icon": "./assets/replai.png",
+  "privacyPolicyUrl": "https://replai.tw/en/privacy"
+}

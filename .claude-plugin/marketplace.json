@@ -1,0 +1,19 @@
+{
+  "name": "replai",
+  "owner": {
+    "name": "AIthentic LLC",
+    "email": "hello@replai.tw",
+    "url": "https://replai.tw"
+  },
+  "metadata": {
+    "description": "Replai support Agent setup and Inbox operations."
+  },
+  "plugins": [
+    {
+      "name": "replai",
+      "source": "./plugins/replai",
+      "description": "Set up, test and publish an AI customer support Agent for your SaaS product.",
+      "version": "1.1.1"
+    }
+  ]
+}
