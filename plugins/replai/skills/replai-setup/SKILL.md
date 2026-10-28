@@ -1,6 +1,6 @@
 ---
 name: replai-setup
-description: "Set up and run a Replai AI customer support Agent through Replai's MCP server: connect, choose the Workspace, add knowledge, preview answers, connect LINE or the website widget, publish, and work the Inbox. Use when the user asks to do this in Replai."
+description: "Set up and run a Replai AI customer support Agent through Replai's MCP server: connect, choose the Workspace, add knowledge, preview answers, connect a channel, publish, and work the Inbox. Use when the user asks to do this in Replai."
 ---
 
 # Set up and run a Replai support Agent
