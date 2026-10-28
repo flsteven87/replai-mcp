@@ -13,7 +13,7 @@
       "name": "replai",
       "source": "./plugins/replai",
       "description": "Set up, test and publish an AI customer support Agent for your SaaS product.",
-      "version": "1.11.1"
+      "version": "1.11.2"
     }
   ]
 }
