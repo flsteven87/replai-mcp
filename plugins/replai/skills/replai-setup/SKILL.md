@@ -1,6 +1,6 @@
 ---
 name: replai-setup
-description: "Set up and run a Replai AI customer support Agent through Replai's MCP server or CLI: connect, choose the Workspace, add knowledge, preview answers, connect LINE or the website widget, publish, and work the Inbox. Use when the user asks to do this in Replai."
+description: "Set up and run a Replai AI customer support Agent through Replai's MCP server: connect, choose the Workspace, add knowledge, preview answers, connect LINE or the website widget, publish, and work the Inbox. Use when the user asks to do this in Replai."
 ---
 
 # Set up and run a Replai support Agent
@@ -8,24 +8,22 @@ description: "Set up and run a Replai AI customer support Agent through Replai's
 Replai gives SaaS teams an AI customer support Agent grounded in their product knowledge.
 It answers on a website chat widget or LINE and hands conversations to the team's Inbox when
 a person is needed.
-This skill covers doing that setup with Replai's remote MCP server or its CLI.
+This skill covers doing that setup with Replai's remote MCP server.
 Guide: https://replai.tw/en/guide/connect-ai-agents
 
 ## 1. Connect
 
 MCP server: `https://api.replai.tw/mcp` (Streamable HTTP, OAuth).
 
-- Claude Code: `claude mcp add --transport http replai https://api.replai.tw/mcp`, then `/mcp` → replai → Authenticate.
-- Codex: `codex mcp add replai --url https://api.replai.tw/mcp`.
-- Grok Build: `grok mcp add --transport http replai https://api.replai.tw/mcp`, then `/mcps` → replai → `i`.
-- Other MCP clients: add the URL with OAuth authentication.
+Use the Replai MCP connection included with the assistant's installed package. For other clients,
+add the server URL in the client's MCP settings with OAuth authentication. The connection guide
+above has client-specific registration instructions.
 
 The first connection opens the user's browser. The user signs in to Replai with Google, chooses
 one Workspace and approves the requested permissions. This step belongs to the user; do not try
 to complete it for them, and never ask for passwords or API keys.
 
-CLI alternative: `curl -fsSL https://replai.tw/install.sh | sh`, then `replai login` (browser approval) and
-`replai status`. Run `replai --help` and `replai <command> --help` for arguments.
+Use only the connected Replai MCP tools. No local software installation or shell execution is needed.
 
 ## 2. Confirm the Workspace
 
@@ -45,8 +43,9 @@ change it with `agent_draft_edit`. Draft edits never reach customers until publi
 - Website: `website_discover`, then `website_import` with the pages to import.
 - Text or a single URL: `source_add`.
 - Google Drive or GitHub: check `provider_status`; if not connected, `provider_connect_handoff`
-  returns a Replai link for the user to open. Then `drive_files_list` / `source_import_drive`
-  or `source_import_repository`.
+  returns a Replai link for the user to open. Follow it with the tool its `readback_tool` names
+  (`provider_connect_attempt_read` for GitHub) until it reports connected. Then
+  `drive_files_list` / `source_import_drive` or `source_import_repository`.
 - Files on the user's computer: `source_upload_handoff` returns an upload link for the user;
   MCP cannot read local paths.
 - Imports run asynchronously: follow them with `source_operation_read` and `sources_list`.
@@ -54,8 +53,8 @@ change it with `agent_draft_edit`. Draft edits never reach customers until publi
 ## 5. Preview answers
 
 Save representative customer questions with `test_case_create`, run them with
-`test_case_run` (it runs the draft and may incur cost; do not rerun automatically after a
-timeout) and read results with `test_result_read`. `knowledge_gaps_list` shows questions the
+`test_case_run` (it runs the draft and uses the Workspace's monthly test allowance; do not
+rerun automatically after a timeout) and read results with `test_result_read`. `knowledge_gaps_list` shows questions the
 Agent could not answer.
 
 ## 6. Connect a channel
@@ -73,9 +72,6 @@ Call `publication_review`, show the user the candidate, and publish only when th
 `publication_history` lists versions; `publication_restore` puts an earlier version back into
 the draft, which then needs publishing again.
 
-CLI equivalents: `replai agents create`, `replai website discover` / `import`,
-`replai widget ensure`, `replai test run`, `replai review create`, `replai publish create`.
-
 ## 8. After launch
 
 - Inbox: `inbox_list`, `inbox_read`, `inbox_reply`, `inbox_drafts`, `inbox_draft_approve`,
@@ -91,4 +87,4 @@ CLI equivalents: `replai agents create`, `replai website discover` / `import`,
 - Removal tools (`agent_remove`, `channel_remove`, `provider_disconnect`) each have an
   impact read (`agent_removal_impact`, `channel_removal_impact`,
   `provider_disconnect_impact`); show it to the user and remove only on their explicit request.
-- The user can revoke this access in Replai under Workspace settings → External apps.
+- The user can revoke this access in Replai under Workspace settings → MCP & CLI.
