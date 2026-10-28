@@ -1,6 +1,12 @@
 # Replai
 
-Set up and run AI customer support for your SaaS product from your AI assistant. Connect your Replai Workspace, choose an Agent, add product knowledge, test answers, and review a publication before it reaches customers. Read support conversations, review reply drafts, and hand conversations to your team. Replai uses your team's knowledge and rules, with a shared Inbox for human support. A Replai account and browser authorization are required; each connection reaches one Workspace. Website chat and LINE are supported channels. Publishing, sending replies, and removing resources are separate actions with their own permissions.
+Replai is AI customer support for SaaS teams. Its support Agent answers customers from your own product knowledge and hands a conversation to your team when a person is needed. This plugin lets you run Replai from your AI assistant.
+
+Connect your Replai Workspace, add product knowledge, and test how your Agent answers customer questions. Review a publication before customers see it. Read conversations in the shared Inbox, check reply drafts, and hand a conversation to a teammate.
+
+Edits stay in a draft until you publish them, and your assistant sends nothing to a customer unless you ask it to.
+
+You need a Replai account. Each connection signs in through your browser and reaches one Workspace. Replai answers on website chat and LINE.
 
 [Connection guide](https://replai.tw/en/guide/connect-ai-agents) · [Privacy](https://replai.tw/en/privacy) · [Terms](https://replai.tw/en/terms) · [Support](https://replai.tw/en/guide/troubleshooting)
 
