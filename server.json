@@ -3,7 +3,7 @@
   "name": "tw.replai/replai",
   "title": "Replai",
   "description": "Set up, test and publish an AI customer support Agent for your SaaS product.",
-  "version": "1.11.3",
+  "version": "1.13.0",
   "websiteUrl": "https://replai.tw/en/guide/connect-ai-agents",
   "icons": [
     {
